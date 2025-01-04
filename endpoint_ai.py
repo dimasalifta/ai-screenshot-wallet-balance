@@ -2,12 +2,17 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from io import BytesIO
 from PIL import Image
+from dotenv import load_dotenv
 import os
 from datetime import datetime
 import google.generativeai as genai
 from google.generativeai.types import generation_types
 import PIL.Image
 import json
+
+load_dotenv()
+# Mengakses variabel lingkungan GEMINI_API_KEY
+api_key = os.getenv("GEMINI_API_KEY")
 app = FastAPI()
 
 async def generate_response(id: int , image_path: str):
@@ -20,7 +25,7 @@ async def generate_response(id: int , image_path: str):
     )
 
     # 3. Konfigurasi API
-    genai.configure(api_key=os.environ["GEMINI_API_KEY"], transport="rest")
+    genai.configure(api_key=api_key, transport="rest")
 
     # 4. Membuat Model
     model = genai.GenerativeModel(
