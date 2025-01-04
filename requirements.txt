@@ -6,4 +6,4 @@ python-multipart
 jinja2
 aiofiles
 requests
-
+python-dotenv
