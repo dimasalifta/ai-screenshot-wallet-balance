@@ -36,7 +36,7 @@ chat = model.start_chat(
     ]
 )
 # 5. Menghasilkan Respons
-screenshot_image = PIL.Image.open("ss2.jpg")
+screenshot_image = PIL.Image.open("ss (1).jpg")
 
 response = chat.send_message(screenshot_image)
 # print(response.text)
