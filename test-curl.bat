@@ -1,0 +1,1 @@
+curl -X POST http://127.0.0.1:8000/upload-image/1234 -F "file=@test/ss (1).png"

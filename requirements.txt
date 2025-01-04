@@ -1,0 +1,9 @@
+google-generativeai>=0.8.2
+pillow
+fastapi
+uvicorn
+python-multipart
+jinja2
+aiofiles
+requests
+

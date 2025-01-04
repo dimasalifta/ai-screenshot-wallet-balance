@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Foto</title>
+  </head>
+  <body>
+    <h2>Upload Foto untuk Pemeriksaan Saldo</h2>
+    <form
+      action="/upload-image/{{ user_id }}"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <label for="file">Pilih gambar:</label>
+      <input type="file" name="file" accept="image/*" required /><br /><br />
+      <label for="user_id">Masukkan ID Unik:</label>
+      <input
+        type="text"
+        name="user_id"
+        value="{{ user_id }}"
+        required
+      /><br /><br />
+      <button type="submit">Kirim ke API</button>
+    </form>
+
+    {% if result %}
+    <h3>Hasil:</h3>
+    <pre>{{ result | tojson }}</pre>
+    {% endif %}
+  </body>
+</html>
