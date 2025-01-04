@@ -2,7 +2,14 @@ import google.generativeai as genai
 from google.generativeai.types import generation_types
 import PIL.Image
 import json
+from dotenv import load_dotenv
 import os
+
+
+load_dotenv()
+# Mengakses variabel lingkungan GEMINI_API_KEY
+api_key = os.getenv("GEMINI_API_KEY")
+
 # 1. Konfigurasi Pengaturan Generasi
 generation_config = generation_types.GenerationConfig(
     temperature=0.7,
@@ -20,7 +27,7 @@ generation_config = generation_types.GenerationConfig(
 # )
 
 # 3. Konfigurasi API
-genai.configure(api_key=os.environ["GEMINI_API_KEY"], transport="rest")
+genai.configure(api_key=api_key, transport="rest")
 
 
 # 4. Membuat Model
