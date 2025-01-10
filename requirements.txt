@@ -7,3 +7,6 @@ jinja2
 aiofiles
 requests
 python-dotenv
+kivy
+plyer
+watchdog
